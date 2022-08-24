@@ -1,0 +1,37 @@
+nav{
+    display: flex;
+    align-items: center;
+    min-height: 10vh;
+}
+.logo{
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.links{
+    flex: 1;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.navLinks{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin-left: 155px;
+}
+.textDeco{
+    text-decoration: none;
+    color: #333;
+}
+.textDeco:hover {
+    color: black;
+}
+.navBtns{
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
