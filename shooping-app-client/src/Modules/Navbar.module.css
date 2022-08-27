@@ -1,7 +1,15 @@
+section{
+    position: relative;
+}
 nav{
     display: flex;
     align-items: center;
     min-height: 10vh;
+}
+@media (max-width:850px) {
+    nav{
+        justify-content: space-between;
+    }
 }
 .logo{
     margin: 0;
@@ -14,24 +22,66 @@ nav{
     justify-content:space-between;
     align-items: center;
 }
-.navLinks{
+@media (max-width:850px) {
+    .links{
+        display: none;
+    }
+}
+.menuLinks,.navLinks{
     margin: 0;
     padding: 0;
     list-style: none;
+}
+.navLinks{
     display: flex;
     gap: 40px;
     margin-left: 155px;
 }
-.textDeco{
+
+.textDeco,.menuItem{
     text-decoration: none;
     color: #333;
+    text-transform: uppercase;
 }
+.menuItem:hover,
 .textDeco:hover {
-    color: black;
+    color:black !important;
 }
 .navBtns{
     display: flex;
     gap: 6px;
     align-items: center;
+}
+.menuIcon{
+    display: none;
+}
+@media (max-width:850px) {
+    .menuIcon {
+        display: block;
+    }
+}
+.openMegaMenu {
+    display: flex;
+}
+.closeMegaMenu{
+    display: none;
+}
+.menuLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    z-index: 1000;
+    background-color: #eee;
+    transition: 0.3s;
+    top:100%;
+}
+.menuItem{
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #d1c7c7;
 }
 
