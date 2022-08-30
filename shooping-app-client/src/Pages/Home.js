@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react';
+import LandingPage from "./LandingPage";
 
 const Home = () => {
     return (
-        <div>Home</div>
+        <Fragment>
+            
+                <LandingPage/>
+            
+        </Fragment>
     )
 }
 export default Home;
