@@ -32,7 +32,7 @@ const Navbar = () => {
                     <h2 className={Styles.logo}>Shooping App</h2>
                     <div className={Styles.links}>
                         <ul className={Styles.navLinks}>
-                            <li className={Styles.navItem}><NavLink className={Styles.textDeco} to="/">Home</NavLink></li>
+                            <li className={Styles.navItem}><NavLink className={Styles.textDeco}  activeclassname="active"  to="/">Home</NavLink></li>
                             <li className={Styles.navItem}><NavLink className={Styles.textDeco} to="/products">Products</NavLink></li>
                             <li className={Styles.navItem}><NavLink className={Styles.textDeco} to="/about">About</NavLink></li>
                             <li className={Styles.navItem}><NavLink className={Styles.textDeco} to="/contact">Contact</NavLink></li>
