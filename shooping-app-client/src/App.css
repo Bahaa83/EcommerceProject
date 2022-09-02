@@ -4,6 +4,15 @@
   margin: 0 auto;
   width: 90%;
 }
+.active{
+  font-weight: 600;
+  color: black !important;
+}
+.activeBtn{
+  color: white;
+  background-color: black;
+  border-color: white;
+}
 
 /* End Globale Css */
 
