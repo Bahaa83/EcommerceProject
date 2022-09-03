@@ -9,7 +9,8 @@ import Footer from "./Components/Footer";
 import Login from "./Pages/Login";
 import Signup from './Pages/Signup';
 import ErrorPage from './Pages/ErrorPage';
-import Details from "./Pages/Details"
+import Details from "./Pages/Details";
+
 
 import {Routes,Route } from "react-router-dom";
 
@@ -25,7 +26,7 @@ function App() {
           <Route path='/contact' element={<Contact />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/signup' element={<Signup />}></Route>
-          <Route path='/details' element={<Details/>}></Route>
+          <Route path='/details/:id' element={<Details/>}></Route>
           <Route path='*' element={<ErrorPage/>}></Route>
           
         </Routes>
