@@ -19,7 +19,7 @@ const Product = ({ product }) => {
           <Star rate={product.rating.rate} />
         </div>
         <div className={Styles.link}>
-          <NavLink to="/details">Details</NavLink>
+          <NavLink to={`/details/${product.id}`}>Details</NavLink>
         </div>
       </div>
     </Fragment>
