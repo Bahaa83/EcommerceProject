@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Styles from "../Modules/Filter.module.css" ;
 
-const FilterTool = () => {
+const FilterTool = ({filterHandller}) => {
     const FilterButton = styled(Button)({
         color: "#333",
         transition: "0.3s",
@@ -17,16 +17,19 @@ const FilterTool = () => {
             borderColor: "white",
         },
     });
+    const filterOperation = (keyWord) => {
+        filterHandller(keyWord);
+    }
     return (
         <Fragment>
             <section id={Styles.Filters}>
                 <div className='container'>
                     <div className={Styles.filtersBtns}>
-                        <FilterButton>All</FilterButton>
-                        <FilterButton>Men's Clothing</FilterButton>
-                        <FilterButton>Women's Clothing</FilterButton>
-                        <FilterButton>Electronics</FilterButton>
-                        <FilterButton>Jewelery</FilterButton>
+                        <FilterButton onClick={()=>filterOperation("All")}>All</FilterButton>
+                        <FilterButton onClick={()=>filterOperation("men's clothing")}>Men's Clothing</FilterButton>
+                        <FilterButton onClick={()=>filterOperation("women's clothing")}>Women's Clothing</FilterButton>
+                        <FilterButton onClick={()=>filterOperation("electronics")}>Electronics</FilterButton>
+                        <FilterButton onClick={()=>filterOperation("jewelery")}>Jewelery</FilterButton>
 
                     </div>
                 </div>
