@@ -1,3 +1,13 @@
+.header {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #777;
+    margin-top: 50px;
+}
+
+.header h2 {
+    letter-spacing: 1px;
+}
 .content{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
