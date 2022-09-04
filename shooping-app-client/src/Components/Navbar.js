@@ -10,9 +10,6 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 
-
-const Navbar = () => {
-    const [toggle, setToggle] = useState(false);
     const NavButton = styled(Button)({
         color: "#333",
         transition: "0.3s",
@@ -25,8 +22,11 @@ const Navbar = () => {
             borderColor: "white",
         }
     })
+    const Navbar = () => {
+    const [toggle, setToggle] = useState(false);
+
     return (
-        <section>
+        <section className={Styles.navbar}>
             <div className='container'>
                 <nav>
                     <h2 className={Styles.logo}>Shooping App</h2>
@@ -61,4 +61,5 @@ const Navbar = () => {
         </section>
     )
 }
+export {NavButton};
 export default Navbar;
