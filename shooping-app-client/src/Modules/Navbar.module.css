@@ -1,5 +1,6 @@
-section{
+.navbar{
     position: relative;
+    border-bottom: 2px solid #eee;
 }
 nav{
     display: flex;
