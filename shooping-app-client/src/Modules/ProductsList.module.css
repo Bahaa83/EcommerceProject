@@ -7,10 +7,18 @@
 
 .header h2 {
     letter-spacing: 1px;
+    color: #504e4e;
 }
 .content{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 25px;
-    margin-top: 90px;
+    margin: 90px 0;
+}
+.skeleton{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+    flex-wrap: wrap;
 }
