@@ -2,13 +2,14 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import "../App.css";
 import Styles from "../Modules/Navbar.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import LoginIcon from '@mui/icons-material/Login';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
     const NavButton = styled(Button)({
         color: "#333",
@@ -23,7 +24,8 @@ import { useState } from 'react';
         }
     })
     const Navbar = () => {
-    const [toggle, setToggle] = useState(false);
+        const [toggle, setToggle] = useState(false);
+        const cardCount = useSelector((state) => state.card)
 
     return (
         <section className={Styles.navbar}>
@@ -40,7 +42,7 @@ import { useState } from 'react';
                         <div className={Styles.navBtns}>
                             <NavButton href='/login' variant="outlined"  startIcon={<LoginIcon  fontSize="small" />}>Login</NavButton>
                             <NavButton href='/signup' variant="outlined" startIcon={<PersonAddIcon  fontSize="small"  />}>Signup</NavButton>
-                            <NavButton href='/card' variant="outlined" startIcon={<AddShoppingCartIcon  fontSize="small"  />}>Card</NavButton>
+                            <Link className={Styles.cardLink} to='/card' variant="outlined"><AddShoppingCartIcon fontSize="small"  />Card({cardCount.length})</Link>
                         </div>
                     </div>
                     <div className={Styles.menuIcon} onClick={()=> setToggle(!toggle)}>
