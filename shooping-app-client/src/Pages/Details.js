@@ -1,17 +1,21 @@
 import React, { Fragment, useCallback, useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import axios from "axios";
 import Styles from "../Modules/Details.module.css";
+import Style from "../Modules/Navbar.module.css";
 import "../App.css";
 import Star from "../Components/Star";
 import { NavButton } from '../Components/Navbar';
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import { addItem } from '../redux';
+import { useDispatch } from 'react-redux';
 
 const Details = () => {
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState({});
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   useEffect(() => {
     getProductById();
   }, []);
@@ -54,8 +58,8 @@ const Details = () => {
             <p className={Styles.price}>{productDetails.price} $</p>
             <p className={Styles.description}>{productDetails.description}</p>
             <div className={Styles.infoBtns}>
-              <NavButton variant="outlined">Add to Card</NavButton>
-              <NavButton variant="outlined">Go to Card</NavButton>
+              <NavButton variant="outlined" onClick={()=>dispatch(addItem(productDetails))}>Add to Card</NavButton>
+              <Link className={Style.cardLink} to='/card' variant="outlined">Go to Card</Link>
             </div>
           </div>
 
