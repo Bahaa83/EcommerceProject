@@ -40,8 +40,8 @@ import { useSelector } from 'react-redux';
                             <li className={Styles.navItem}><NavLink className={Styles.textDeco} to="/contact">Contact</NavLink></li>
                         </ul>
                         <div className={Styles.navBtns}>
-                            <NavButton href='/login' variant="outlined"  startIcon={<LoginIcon  fontSize="small" />}>Login</NavButton>
-                            <NavButton href='/signup' variant="outlined" startIcon={<PersonAddIcon  fontSize="small"  />}>Signup</NavButton>
+                            <Link className={Styles.cardLink} to='/login' variant="outlined"><LoginIcon fontSize="small"  />Login</Link>
+                            <Link className={Styles.cardLink} to='/signup' variant="outlined"><PersonAddIcon fontSize="small"  />Signup</Link>
                             <Link className={Styles.cardLink} to='/card' variant="outlined"><AddShoppingCartIcon fontSize="small"  />Card({cardCount.length})</Link>
                         </div>
                     </div>
