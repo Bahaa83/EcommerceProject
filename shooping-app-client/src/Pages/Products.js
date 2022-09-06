@@ -1,8 +1,71 @@
-import React from 'react'
+import React,{useEffect,Fragment} from 'react';
+import axios from "axios";
+import { useState } from 'react';
+import FilterTool from '../Components/FilterTool';
+import Styles from "../Modules/ProductsList.module.css";
+import Product from '../Components/Product';
+import Skeleton from 'react-loading-skeleton';
 
 const Products = () => {
+    const [products, setProducts] = useState([]);
+    const [filter, setFilter] = useState([]);
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        fitchData();
+    }, [])
+    
+    const fitchData =  () => {
+        axios.get("http://localhost:3004/products")
+            .then(resp => {
+                setProducts(resp.data)
+                setFilter(resp.data)
+            })
+            .catch(erro => console.log(erro))
+            .finally(()=>setLoading(true))
+            
+    }
+    const showProducts = filter.map((product) => (
+            
+            <Product key={product.id} product={product}/>
+    ))
+
+    const filterProducts = (keyWord) => {
+        if (keyWord === "All")
+            {
+            setFilter(products);
+            }
+        else
+            {
+            const newProducts = products.filter((item) =>
+            item.category === keyWord
+        );
+        setFilter(newProducts);
+            }
+    }
+
+    const emptyList = () => {
+        return (
+            <div className={Styles.skeleton}>
+                <Skeleton width={200} height={200} />
+                <Skeleton width={200} height={200} />
+                <Skeleton width={200} height={200} />
+            </div>
+        )
+    }
     return (
-        <div>Products</div>
+        <Fragment>
+            <div className='container'>
+                <div className={Styles.header}>
+                    <h2>Latest Products</h2>
+                </div>
+                <FilterTool filterHandller={filterProducts} />
+                    {!loading && emptyList()  }
+                <div className={Styles.content}>
+                    {loading && showProducts  } 
+                </div>
+            </div>
+            
+        </Fragment>
     )
 }
 export default Products
