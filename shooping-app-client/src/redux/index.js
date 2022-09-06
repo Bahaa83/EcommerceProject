@@ -31,7 +31,7 @@ const CardSlice = createSlice({
                 return state.filter((item)=> item.id !== product.id)
             } else {
                 // if this item quantity more than 1 => decrease quantity
-                return  state.map((item) => 
+                state.map((item) => 
                     item.id === product.id ? item.quantity = item.quantity - 1 : item
                 )
             }
