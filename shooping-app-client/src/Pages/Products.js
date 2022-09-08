@@ -5,6 +5,7 @@ import FilterTool from '../Components/FilterTool';
 import Styles from "../Modules/ProductsList.module.css";
 import Product from '../Components/Product';
 import Skeleton from 'react-loading-skeleton';
+import Footer from "../Components/Footer";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -64,7 +65,7 @@ const Products = () => {
                     {loading && showProducts  } 
                 </div>
             </div>
-            
+            <Footer/>
         </Fragment>
     )
 }
