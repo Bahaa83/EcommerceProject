@@ -5,7 +5,6 @@ import Home from "./Pages/Home";
 import Products from "./Pages/Products";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
-import Footer from "./Components/Footer";
 import Login from "./Pages/Login";
 import Signup from './Pages/Signup';
 import ErrorPage from './Pages/ErrorPage';
@@ -30,7 +29,6 @@ function App() {
           <Route path='*' element={<ErrorPage/>}></Route>
           
         </Routes>
-        <Footer/>
       </div>
     </Fragment>
   );
