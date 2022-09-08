@@ -16,10 +16,11 @@ const Products = () => {
     }, [])
     
     const fitchData =  () => {
-        axios.get("http://localhost:3004/products")
+        axios.get("https://fakestoreapi.com/products")
             .then(resp => {
                 setProducts(resp.data)
                 setFilter(resp.data)
+                console.log(resp)
             })
             .catch(erro => console.log(erro))
             .finally(()=>setLoading(true))

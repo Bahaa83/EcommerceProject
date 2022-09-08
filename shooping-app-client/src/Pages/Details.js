@@ -21,7 +21,7 @@ const Details = () => {
   }, []);
   
   const getProductById = useCallback(async () => {
-      await axios.get(`http://localhost:3004/products/${id}`)
+      await axios.get(`https://fakestoreapi.com/products/${id}`)
       .then(pro => setProductDetails(pro.data))
       .catch(error => console.log(error))
       .finally(() => setLoading(true));
